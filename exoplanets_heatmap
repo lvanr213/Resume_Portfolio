@@ -1,0 +1,339 @@
+import math
+import numpy as np
+import scipy
+import matplotlib.pyplot as plt
+import astropy
+import pandas as pd
+from scipy.optimize import curve_fit
+from matplotlib.colors import LogNorm
+
+planets = pd.read_csv('Kconfirmed.csv', delimiter=",", header=0,skiprows = 99)
+print(planets.head())
+Cplanets = pd.read_csv('Kcandidates.csv', delimiter=",", header=0,skiprows = 146)
+print(Cplanets.head())
+stars = pd.read_csv('STARS.txt',sep='\s+',header=0,skiprows=204,engine='python',quoting=3,on_bad_lines='skip',usecols=lambda col: col != 1 )
+print(stars.head())
+stars_sup = pd.read_csv( 'STARS_SUP.txt', sep='\s+',  header=0,skiprows=204,  engine='python',   quoting=3,  usecols=lambda col: col != 1 )
+print(stars_sup.head())
+allstars = pd.concat([stars, stars_sup], ignore_index=True)
+cols_to_numeric = ['teff', 'logg', 'kepmag']
+for col in cols_to_numeric:
+    allstars[col] = pd.to_numeric(allstars[col], errors='coerce')  # Convert bad values to NaN
+
+# Apply filtering criteria for stars and planets
+filtered_allstars = allstars[
+    (allstars['teff'].between(4100, 6100, inclusive="both")) &  # Temperature range
+    (allstars['logg'].between(4.0, 4.9, inclusive="both")) &    # Log g range
+    (allstars['kepmag'] < 15)                                # Planet period < 50 days
+].dropna(subset=cols_to_numeric)  # Remove rows with NaN in filtering columns
+
+# Print first few rows
+print(filtered_allstars.head())
+# Select planet-related period columns
+planet_cols = ['pl_orbper', 'pl_orbpererr1', 'pl_orbpererr2']
+Cplanet_cols = ['koi_period', 'koi_period_err1', 'koi_period_err2']
+
+# Convert period columns to numeric (handling errors)
+for col in planet_cols:
+    planets[col] = pd.to_numeric(planets[col], errors='coerce')
+
+for col in Cplanet_cols:
+    Cplanets[col] = pd.to_numeric(Cplanets[col], errors='coerce')
+
+# Apply filter: Keep only planets with periods P < 50 days
+filtered_planets = planets[planets['pl_orbper'] < 50]
+filtered_Cplanets = Cplanets[Cplanets['koi_period'] < 50]
+
+# Print first few rows separately
+print("Filtered Confirmed Planets:")
+print(filtered_planets.head())
+
+print("\nFiltered Candidate Planets:")
+print(filtered_Cplanets.head())
+
+# Filter out planets with radii > 100
+filtered_planets = filtered_planets[filtered_planets['pl_rade'] <= 100]
+filtered_Cplanets = filtered_Cplanets[filtered_Cplanets['koi_prad'] <= 100]
+
+# Define the bin edges for the heatmap, ensuring they span the full range of the filtered data
+x_bins = np.logspace(np.log10(filtered_Cplanets['koi_period'].min() * 0.9), 
+                     np.log10(filtered_Cplanets['koi_period'].max() * 1.1), num=10)
+
+y_bins = np.logspace(np.log10(filtered_Cplanets['koi_prad'].min() * 0.9), 
+                     np.log10(filtered_Cplanets['koi_prad'].max() * 1.1), num=10)
+
+# Create the 2D histogram (heatmap) using the filtered data
+heatmap, xedges, yedges = np.histogram2d(
+    np.concatenate([filtered_planets['pl_orbper'], filtered_Cplanets['koi_period']]), 
+    np.concatenate([filtered_planets['pl_rade'], filtered_Cplanets['koi_prad']]), 
+    bins=[x_bins, y_bins]
+)
+
+# Create figure
+plt.figure(figsize=(12, 10))
+
+# Ensure the color mapping and colorbar match exactly
+norm = LogNorm(vmin=heatmap[heatmap > 0].min(), vmax=heatmap.max())
+
+# Plot the heatmap with correct normalization
+mesh = plt.pcolormesh(xedges, yedges, heatmap.T, shading='auto', cmap='viridis', norm=norm)
+
+# Add colorbar
+cbar = plt.colorbar(mesh)
+cbar.set_label('Density')
+
+# Overlay scatter plot using the filtered data
+plt.scatter(filtered_Cplanets['koi_period'], filtered_Cplanets['koi_prad'], 
+            color='red', alpha=0.6, s=10, label='Candidate Planets')
+plt.scatter(filtered_planets['pl_orbper'], filtered_planets['pl_rade'], 
+            color='blue', alpha=0.6, s=10, label='Confirmed Planets')
+
+# Set log scales
+plt.xscale('log')
+plt.yscale('log')
+
+# Set custom ticks
+plt.xticks(x_bins, labels=[f"{x:.2g}" for x in x_bins])
+plt.yticks(y_bins, labels=[f"{y:.2g}" for y in y_bins])
+
+# Labels, title, and legend
+plt.xlabel("Orbital Period (days) [log]")
+plt.ylabel("Planet Radius (Earth radii) [log]")
+plt.title("Planet Density Heatmap with Scatter Overlay (R ≤ 100)")
+plt.legend()
+
+# Save the figure
+# plt.savefig("planet_density_heatmap_filtered.png", dpi=300)
+
+# Show the plot
+plt.show()
+
+# Define planet radius bins (including 0-2 and 32-100)
+radius_bins = [
+    (0, 2, 'purple', '0-2 Earth radii'),  # New bin for 0-2 Earth radii
+    (2, 4, 'blue', '2-4 Earth radii'),
+    (4, 8, 'green', '4-8 Earth radii'),
+    (8, 32, 'red', '8-32 Earth radii'),
+    (32, 100, 'orange', '32-100 Earth radii')  # New bin for 32-100 Earth radii
+]
+
+# Define log-spaced bins for orbital period
+period_bins = np.logspace(np.log10(0.68), np.log10(50), 15)
+
+# Count the number of stars for normalization (from filtered_allstars)
+num_stars = len(filtered_allstars)
+
+# Create figure with subplots
+plt.figure(figsize=(8, 6))
+
+# 🔹 **Plot Planet Occurrence Per Star for Different Radius Bins**
+for min_radius, max_radius, color, label in radius_bins:
+    # Filter planets in this radius range
+    filtered_confirmed = filtered_planets[(filtered_planets['pl_rade'] >= min_radius) & 
+                                          (filtered_planets['pl_rade'] < max_radius)]
+    
+    filtered_candidates = filtered_Cplanets[(filtered_Cplanets['koi_prad'] >= min_radius) & 
+                                            (filtered_Cplanets['koi_prad'] < max_radius)]
+    
+    # Concatenate orbital periods
+    all_periods = np.concatenate([
+        filtered_confirmed['pl_orbper'].dropna(),
+        filtered_candidates['koi_period'].dropna()
+    ])
+    
+    # Compute histogram for planet occurrence per star
+    occurrence_counts, _ = np.histogram(all_periods, bins=period_bins)
+    occurrence_per_star = occurrence_counts / num_stars  # Normalize
+
+    # Calculate error bars (Poisson error: sqrt(N) for each bin count)
+    errors = np.sqrt(occurrence_counts) / num_stars
+
+    # Step plot
+    plt.step(period_bins, np.append(occurrence_per_star, occurrence_per_star[-1]), 
+                 where='post', color=color, linestyle='-', alpha=0.7, label=label)
+
+    # Scatter plot with error bars
+    bin_centers = np.sqrt(period_bins[:-1] * period_bins[1:])  # Geometric mean for log spacing
+    plt.errorbar(bin_centers, occurrence_per_star, yerr=errors, fmt='o', color=color, markersize=5, capsize=3)
+
+# 🔹 **All Planets (No Radius Filtering)**
+all_periods_all = np.concatenate([
+    filtered_planets['pl_orbper'].dropna(),
+    filtered_Cplanets['koi_period'].dropna()
+])
+
+occurrence_counts_all, _ = np.histogram(all_periods_all, bins=period_bins)
+occurrence_per_star_all = occurrence_counts_all / num_stars
+
+# Calculate error bars for all planets (Poisson error: sqrt(N) for each bin count)
+errors_all = np.sqrt(occurrence_counts_all) / num_stars
+
+# Step plot (all planets)
+plt.step(period_bins, np.append(occurrence_per_star_all, occurrence_per_star_all[-1]), 
+             where='post', color='black', linestyle='-', linewidth=1.5, label='All Planets')
+
+# Scatter plot (all planets) with error bars
+plt.errorbar(bin_centers, occurrence_per_star_all, yerr=errors_all, fmt='o', color='black',  markersize=5, capsize=3)
+
+# Axis settings for the first subplot
+plt.yscale('log')
+plt.ylabel("Planet Occurrence per Star")
+plt.xlabel("Orbital Period (days)")
+plt.title("Planet Occurrence Per Star vs. Orbital Period (All Radii)")
+plt.legend()
+plt.grid(True, which='both', linestyle='--', alpha=0.5)
+
+# Save the figure
+plt.savefig('log_period.png', dpi=300)  # Adjust filename and dpi
+plt.show()
+
+
+# Count the number of stars for normalization (from filtered_allstars)
+num_stars = len(filtered_allstars)
+
+# Create figure and axes
+fig, ax = plt.subplots(figsize=(8, 6))
+
+# 🔹 **Plot Cumulative Occurrence Per Star for Each Radius Bin**
+for min_radius, max_radius, color, label in radius_bins:
+    # Filter planets in this radius range
+    filtered_confirmed = filtered_planets[(filtered_planets['pl_rade'] >= min_radius) & 
+                                          (filtered_planets['pl_rade'] < max_radius)]
+    
+    filtered_candidates = filtered_Cplanets[(filtered_Cplanets['koi_prad'] >= min_radius) & 
+                                            (filtered_Cplanets['koi_prad'] < max_radius)]
+    
+    # Concatenate orbital periods
+    all_periods = np.concatenate([
+        filtered_confirmed['pl_orbper'].dropna(),
+        filtered_candidates['koi_period'].dropna()
+    ])
+    
+    # Sort periods for cumulative plot
+    sorted_periods = np.sort(all_periods)
+    cumulative_fraction = np.arange(1, len(sorted_periods) + 1) / num_stars  # Normalize
+
+    # Cumulative plot
+    ax.plot(sorted_periods, cumulative_fraction, color=color, marker='o', linestyle='-', markersize=3, label=label)
+
+# 🔹 **Overall Cumulative Distribution (All Planets)**
+all_periods_all = np.concatenate([
+    filtered_planets['pl_orbper'].dropna(),
+    filtered_Cplanets['koi_period'].dropna()
+])
+
+sorted_periods_all = np.sort(all_periods_all)
+cumulative_fraction_all = np.arange(1, len(sorted_periods_all) + 1) / num_stars  # Normalize
+
+# Plot on the same graph
+ax.plot(sorted_periods_all, cumulative_fraction_all, color='black',  label='All Planets')
+
+# Formatting
+#ax.set_xscale('log')
+ax.set_yscale('log')
+ax.set_xlabel("Orbital Period (days)")
+ax.set_ylabel("Cumulative Occurrence per Star")
+ax.grid(True, which='both', linestyle='--', alpha=0.5)
+ax.legend()
+
+# Show the plot
+plt.tight_layout()
+plt.savefig('log_periodc.png', dpi=300)  # You can adjust the filename and dpi
+
+plt.show()
+
+from scipy.optimize import curve_fit
+import numpy as np
+
+# Define the complex model function
+def model_function(P, k, beta, P0, gamma):
+    return k * P**beta * (1 - np.exp(-(P / P0)**gamma))
+
+# Count the number of stars for normalization (from filtered_allstars)
+num_stars = len(filtered_allstars)
+
+# Create figure for the curve fits
+fig, ax = plt.subplots(figsize=(8, 6))
+
+# 🔹 **Plot and Fit Each Radius Bin**
+for min_radius, max_radius, color, label in radius_bins:
+    # Filter planets in this radius range
+    filtered_confirmed = filtered_planets[(filtered_planets['pl_rade'] >= min_radius) & 
+                                          (filtered_planets['pl_rade'] < max_radius)]
+    
+    filtered_candidates = filtered_Cplanets[(filtered_Cplanets['koi_prad'] >= min_radius) & 
+                                            (filtered_Cplanets['koi_prad'] < max_radius)]
+    
+    # Concatenate orbital periods
+    all_periods = np.concatenate([
+        filtered_confirmed['pl_orbper'].dropna(),
+        filtered_candidates['koi_period'].dropna()
+    ])
+    
+    # Compute histogram for planet occurrence per star
+    occurrence_counts, period_bins = np.histogram(all_periods, bins=np.logspace(np.log10(0.68), np.log10(50), 15))
+    period_centers = np.sqrt(period_bins[:-1] * period_bins[1:])  # Geometric mean of bins
+    occurrence_per_star = occurrence_counts / num_stars  # Normalize
+    
+    # Poisson errors on the occurrence counts
+    occurrence_errors = np.sqrt(occurrence_counts) / num_stars
+    
+    # Fit the curve to the data
+    popt, pcov = curve_fit(model_function, period_centers, occurrence_per_star, p0=(1, -1, 10, 1))
+    
+    # Calculate parameter uncertainties (standard deviations)
+    perr = np.sqrt(np.diag(pcov))  # Standard deviations of the parameters
+    
+    # Print the fitted parameters and their uncertainties
+    print(f"Fit for {label}:")
+    print(f"  k = {popt[0]:.4f} ± {perr[0]:.4f}")
+    print(f"  beta = {popt[1]:.4f} ± {perr[1]:.4f}")
+    print(f"  P0 = {popt[2]:.4f} ± {perr[2]:.4f}")
+    print(f"  gamma = {popt[3]:.4f} ± {perr[3]:.4f}")
+    print()
+    
+    # Plot the data with error bars and the fitted curve
+    ax.errorbar(period_centers, occurrence_per_star, yerr=occurrence_errors, fmt='o', 
+                color=color, capsize=3)
+    ax.plot(period_centers, model_function(period_centers, *popt), color=color, linestyle='-', label=f'{label} (fit)')
+
+# 🔹 **Overall Distribution (All Planets)**
+all_periods_all = np.concatenate([
+    filtered_planets['pl_orbper'].dropna(),
+    filtered_Cplanets['koi_period'].dropna()
+])
+
+occurrence_counts_all, period_bins_all = np.histogram(all_periods_all, bins=np.logspace(np.log10(0.68), np.log10(50), 15))
+period_centers_all = np.sqrt(period_bins_all[:-1] * period_bins_all[1:])
+occurrence_per_star_all = occurrence_counts_all / num_stars
+
+# Poisson errors on the overall distribution
+occurrence_errors_all = np.sqrt(occurrence_counts_all) / num_stars
+
+# Fit the curve to the overall distribution
+popt_all, pcov_all = curve_fit(model_function, period_centers_all, occurrence_per_star_all, p0=(1, -1, 10, 1))
+
+# Calculate parameter uncertainties for the overall fit
+perr_all = np.sqrt(np.diag(pcov_all))
+
+# Print the fitted parameters and their uncertainties for the overall fit
+print("Fit for All Planets:")
+print(f"  k = {popt_all[0]:.4f} ± {perr_all[0]:.4f}")
+print(f"  beta = {popt_all[1]:.4f} ± {perr_all[1]:.4f}")
+print(f"  P0 = {popt_all[2]:.4f} ± {perr_all[2]:.4f}")
+print(f"  gamma = {popt_all[3]:.4f} ± {perr_all[3]:.4f}")
+print()
+
+# Plot the data with error bars and the fitted curve for all planets
+ax.errorbar(period_centers_all, occurrence_per_star_all, yerr=occurrence_errors_all, fmt='o', 
+            color='black', label='All Planets (data)', ecolor='black', capsize=3)
+ax.plot(period_centers_all, model_function(period_centers_all, *popt_all), color='black', linestyle='-', label='All Planets (fit)')
+
+# Formatting
+ax.set_xlabel("Orbital Period (days)")
+ax.set_ylabel("Planet Occurrence per Star")
+ax.grid(True, which='both', linestyle='--', alpha=0.5)
+plt.yscale('log')
+plt.legend()
+plt.tight_layout()
+#plt.savefig('log_period_fit)
