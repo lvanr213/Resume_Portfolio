@@ -1,3 +1,7 @@
+# The following code was for a neutron expirement in which I measured and caluclated the shielding 
+# for a radioactive substance using parrafin and lead as shielding onto a PMT detector. The following code
+# calculates and meausres the best fit function for our spectra
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import optimize
