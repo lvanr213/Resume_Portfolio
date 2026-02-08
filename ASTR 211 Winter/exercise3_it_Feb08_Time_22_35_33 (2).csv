@@ -1,0 +1,846 @@
+'''
+0
+min best ift params [1.         0.26260629 1.96375637]
+min LLike 25.750074570721644
+reduced chi-square 4.681831740131208
+1
+min best ift params [2.         0.07294289 1.88340577]
+min LLike 15.691586413421101
+reduced chi-square 2.853015711531109
+2
+min best ift params [10.          0.07659662  2.44509234]
+min LLike 45.2840294200695
+reduced chi-square 8.233459894558091
+3
+min best ift params [2.         0.19956454 1.88249615]
+min LLike 15.507868898088248
+reduced chi-square 3.446193088464055
+4
+min best ift params [2.         0.01496537 2.05318163]
+min LLike 7.632836457537134
+reduced chi-square 1.3877884468249333
+5
+min best ift params [2.         0.00251938 2.03386727]
+min LLike 49.966246217554044
+reduced chi-square 8.327707702925673
+6
+min best ift params [2.         0.047261   2.74332343]
+min LLike 9.23630515946232
+reduced chi-square 1.53938419324372
+7
+min best ift params [1.         0.0444159  1.97237916]
+min LLike 11.05219989823033
+reduced chi-square 1.8420333163717217
+8
+min best ift params [13.          0.03496115  0.32708583]
+min LLike 27.057694647562126
+reduced chi-square 4.9195808450112954
+9
+min best ift params [4.         0.         2.01240677]
+min LLike 14.57087171372636
+reduced chi-square 3.237971491939191
+10
+min best ift params [10.          0.22967431  1.90992509]
+min LLike 117.09683237001418
+reduced chi-square 23.419366474002835
+11
+min best ift params [2.         0.         2.05397113]
+min LLike 12.780884928753196
+reduced chi-square 2.323797259773308
+12
+min best ift params [2.         0.         1.50913675]
+min LLike 19.55623640095482
+reduced chi-square 3.0086517539930493
+13
+min best ift params [2.         0.15311159 1.35347533]
+min LLike 19.88647376896477
+reduced chi-square 3.059457502917657
+14
+min best ift params [0.         0.2593838  0.20843431]
+min LLike 11.459247500101393
+reduced chi-square 1.6370353571573417
+15
+min best ift params [2.         0.10917031 1.7048217 ]
+min LLike 6.4219345287866245
+reduced chi-square 1.284386905757325
+16
+min best ift params [0.         0.         0.37162359]
+min LLike 10.198463729944141
+reduced chi-square 1.8542661327171166
+17
+min best ift params [1.         0.34274358 2.12851683]
+min LLike 11.261403476229574
+reduced chi-square 1.6087719251756536
+18
+min best ift params [0.         0.08966306 0.41772298]
+min LLike 14.512864108900194
+reduced chi-square 3.6282160272250485
+19
+min best ift params [3.         0.         0.92581599]
+min LLike 9.540191457940155
+reduced chi-square 1.7345802650800282
+20
+min best ift params [2.         0.03248705 1.75332991]
+min LLike 11.707831217539448
+reduced chi-square 2.1286965850071726
+21
+min best ift params [1.         0.         7.21080668]
+min LLike 82.3831396229896
+reduced chi-square 13.730523270498267
+22
+min best ift params [2.         0.         1.97206151]
+min LLike 11.242614525062136
+reduced chi-square 1.8737690875103559
+23
+min best ift params [2.         0.05516413 1.70599247]
+min LLike 8.361153668729367
+reduced chi-square 1.3935256114548944
+24
+min best ift params [0.         0.03145577 8.93921048]
+min LLike 94.14290075637271
+reduced chi-square 18.828580151274544
+25
+min best ift params [2.         0.0889943  1.97204486]
+min LLike 21.38407383022882
+reduced chi-square 3.564012305038137
+26
+min best ift params [2.         0.01390189 2.15769075]
+min LLike 8.966892012823179
+reduced chi-square 1.4944820021371965
+27
+min best ift params [10.          0.01684909  2.93438072]
+min LLike 21.04429707315966
+reduced chi-square 4.208859414631933
+28
+min best ift params [10.          0.01749836  2.445036  ]
+min LLike 66.00384057085256
+reduced chi-square 14.667520126856125
+29
+min best ift params [1.         0.40651049 1.97091604]
+min LLike 24.732186465373807
+reduced chi-square 3.8049517639036625
+30
+min best ift params [13.          0.11851229  0.65044257]
+min LLike 15.32301167390165
+reduced chi-square 2.786002122527573
+31
+min best ift params [2.         0.08768187 1.85722929]
+min LLike 50.57637880949662
+reduced chi-square 7.780981355307172
+32
+min best ift params [0.         0.         0.47605743]
+min LLike 11.376702307315048
+reduced chi-square 2.2753404614630095
+33
+min best ift params [2.         0.28954416 1.44976097]
+min LLike 29.507150205974792
+reduced chi-square 5.364936401086326
+34
+min best ift params [3.         0.2150504  1.84343421]
+min LLike 34.067230248154175
+reduced chi-square 5.241112345869873
+35
+min best ift params [2.         0.         1.39305464]
+min LLike 22.021824162284094
+reduced chi-square 3.670304027047349
+36
+min best ift params [0.         0.07615289 0.49611172]
+min LLike 12.859048784899244
+reduced chi-square 2.5718097569798486
+37
+min best ift params [10.        0.        1.508606]
+min LLike 44.23944991009601
+reduced chi-square 11.059862477524003
+38
+min best ift params [3.         0.         0.99286555]
+min LLike 15.355642205845129
+reduced chi-square 3.8389105514612822
+39
+min best ift params [2.         0.28206509 2.5819874 ]
+min LLike 173.2615680237174
+reduced chi-square 31.502103277039524
+40
+min best ift params [10.          0.04172212  2.22013212]
+min LLike 48.59698318144731
+reduced chi-square 9.719396636289462
+41
+min best ift params [2.         0.18091108 1.51593446]
+min LLike 22.114336495614662
+reduced chi-square 4.91429699902548
+42
+min best ift params [9.         0.3781237  1.32319261]
+min LLike 4.167102906053935
+reduced chi-square 0.833420581210787
+43
+min best ift params [1.         0.16195287 8.42653469]
+min LLike 108.08559361876956
+reduced chi-square 16.628552864426087
+44
+min best ift params [1.         0.         7.52778698]
+min LLike 196.1736507502593
+reduced chi-square 28.024807250037043
+45
+min best ift params [2.         0.17590179 1.52465888]
+min LLike 35.91143419146281
+reduced chi-square 6.529351671175056
+46
+min best ift params [0.         0.         0.79366369]
+min LLike 15.808647122817964
+reduced chi-square 3.952161780704491
+47
+min best ift params [10.          0.          2.12071586]
+min LLike 17.398172931701698
+reduced chi-square 2.8996954886169495
+48
+min best ift params [10.          0.          1.94887383]
+min LLike 22.31018584475605
+reduced chi-square 3.1871694063937213
+49
+min best ift params [11.          0.21169352  0.34708854]
+min LLike 14.596327335942267
+reduced chi-square 2.6538776974440483
+50
+min best ift params [10.          0.          1.35314323]
+min LLike 25.716307185730958
+reduced chi-square 3.9563549516509164
+51
+min best ift params [0.         0.04107294 0.41830272]
+min LLike 12.800559936572744
+reduced chi-square 2.8445688747939433
+52
+min best ift params [11.          0.17308036  0.55457801]
+min LLike 10.721895769872177
+reduced chi-square 1.5316993956960252
+53
+min best ift params [2.         0.15853751 1.515975  ]
+min LLike 26.01320669227924
+reduced chi-square 5.780712598284276
+54
+min best ift params [2.         0.20371217 1.09455575]
+min LLike 10.427878059783376
+reduced chi-square 2.085575611956675
+55
+min best ift params [15.          0.10734221  0.35329132]
+min LLike 25.898512326993476
+reduced chi-square 3.98438651184515
+56
+min best ift params [10.          0.3340725   1.97865476]
+min LLike 49.91154442394663
+reduced chi-square 11.091454316432584
+57
+min best ift params [11.          0.          0.57371032]
+min LLike 7.0349696473992
+reduced chi-square 1.2790853904362183
+58
+min best ift params [2.         0.31960608 1.15632525]
+min LLike 6.880705253608792
+reduced chi-square 1.2510373188379622
+59
+min best ift params [1.         0.13257747 2.60352945]
+min LLike 11.670032712410379
+reduced chi-square 2.9175081781025947
+60
+min best ift params [0.         0.57558076 0.21255497]
+min LLike 20.633951400768133
+reduced chi-square 4.58532253350403
+61
+min best ift params [2.         0.         1.12262007]
+min LLike 16.929704876840628
+reduced chi-square 3.7621566392979173
+62
+min best ift params [1.         0.0789048  1.87448636]
+min LLike 8.943636418183548
+reduced chi-square 1.7887272836367096
+63
+min best ift params [3.         0.26720549 1.75154277]
+min LLike 58.651547210606864
+reduced chi-square 9.775257868434478
+64
+min best ift params [2.         0.         2.03968507]
+min LLike 15.47341755068365
+reduced chi-square 2.0631223400911534
+65
+min best ift params [10.          0.0224202   1.41673295]
+min LLike 23.452317988309943
+reduced chi-square 3.908719664718324
+66
+min best ift params [2.         0.01793663 2.64044179]
+min LLike 7.246019160873724
+reduced chi-square 1.811504790218431
+67
+min best ift params [0.         0.08643604 0.46642732]
+min LLike 15.197465491338331
+reduced chi-square 3.0394930982676662
+68
+min best ift params [2.         0.         1.70408435]
+min LLike 7.987291578660633
+reduced chi-square 1.5974583157321267
+69
+min best ift params [1.00000000e+01 5.26261057e-03 1.85217432e+00]
+min LLike 27.78638728401378
+reduced chi-square 5.5572774568027565
+70
+min best ift params [2.         0.07446196 2.31786583]
+min LLike 45.914605022910536
+reduced chi-square 11.478651255727634
+71
+min best ift params [2.         0.62810867 1.84820667]
+min LLike 74.71695384959303
+reduced chi-square 14.943390769918604
+72
+min best ift params [14.          0.42758178  1.92146402]
+min LLike 14.706517837752019
+reduced chi-square 4.902172612584006
+73
+min best ift params [2.         0.41504995 1.54354459]
+min LLike 21.9460927969564
+reduced chi-square 4.38921855939128
+74
+min best ift params [10.          0.          1.15061871]
+min LLike 26.96772614607314
+reduced chi-square 5.393545229214628
+75
+min best ift params [1.         0.01154655 2.59121536]
+min LLike 5.929800067229175
+reduced chi-square 1.3177333482731501
+76
+min best ift params [1.         0.         8.02399129]
+min LLike 35.0284967482925
+reduced chi-square 7.784110388509443
+77
+min best ift params [6.         4.19429891 1.8129957 ]
+min LLike 13.054840646762774
+reduced chi-square 2.175806774460462
+78
+min best ift params [0.         0.24768319 0.36694447]
+min LLike 5.169880839505277
+reduced chi-square 1.1488624087789505
+79
+min best ift params [10.          0.30580551  2.05252172]
+min LLike 59.85086850978931
+reduced chi-square 10.881976092688966
+80
+min best ift params [2.         0.03195728 1.74214867]
+min LLike 14.866163944566704
+reduced chi-square 2.2871021453179545
+81
+min best ift params [9.         0.37073941 2.45682972]
+min LLike 49.92249861250773
+reduced chi-square 11.093888580557273
+82
+min best ift params [10.          0.          2.09392628]
+min LLike 22.6994135110125
+reduced chi-square 4.5398827022025
+83
+min best ift params [1.         0.         6.16963735]
+min LLike 298.445535844479
+reduced chi-square 49.740922640746504
+84
+min best ift params [2.        0.        2.1173878]
+min LLike 3.9855879853078955
+reduced chi-square 0.9963969963269739
+85
+min best ift params [2.         0.03848461 1.34976185]
+min LLike 8.043691604333736
+reduced chi-square 1.6087383208667472
+86
+min best ift params [10.          0.          1.49861925]
+min LLike 12.976898251273722
+reduced chi-square 2.3594360456861314
+87
+min best ift params [1.         0.02697498 2.37060059]
+min LLike 5.606814130908998
+reduced chi-square 1.4017035327272496
+88
+min best ift params [2.         0.02868337 1.42528959]
+min LLike 6.620323968417483
+reduced chi-square 1.471183104092774
+89
+min best ift params [2.         0.         2.35199023]
+min LLike 5.289280356347679
+reduced chi-square 1.5112229589564798
+90
+min best ift params [2.         0.         1.46618232]
+min LLike 25.69547467510332
+reduced chi-square 3.6707820964433315
+91
+min best ift params [1.         0.27743207 1.16544563]
+min LLike 11.290797424145312
+reduced chi-square 2.822699356036328
+92
+min best ift params [2.00000000e+00 2.67857275e-04 2.17812908e+00]
+min LLike 10.395744255195904
+reduced chi-square 2.9702126443416867
+93
+min best ift params [9.         0.07782129 2.21556744]
+min LLike 31.46919668530252
+reduced chi-square 8.991199052943577
+94
+min best ift params [2.         0.02883696 1.77139948]
+min LLike 44.6055320433678
+reduced chi-square 6.372218863338257
+95
+min best ift params [0.         0.35233279 0.31371164]
+min LLike 7.823473469239062
+reduced chi-square 1.4224497216798293
+96
+min best ift params [2.         0.32100754 2.01354861]
+min LLike 51.02052562667522
+reduced chi-square 8.503420937779204
+97
+min best ift params [2.         0.55308761 2.01176744]
+min LLike 340.88086771544965
+reduced chi-square 48.69726681649281
+98
+min best ift params [10.          0.          3.52994692]
+min LLike 72.83041327658637
+reduced chi-square 9.710721770211515
+99
+min best ift params [2.         0.18410592 1.52435537]
+min LLike 14.440321983891263
+reduced chi-square 2.6255130879802295
+100
+min best ift params [2.         0.12717083 1.52426767]
+min LLike 12.676946875898496
+reduced chi-square 2.8170993057552214
+101
+min best ift params [15.          0.23899246  0.04305615]
+min LLike 19.836833556087683
+reduced chi-square 3.9673667112175366
+102
+min best ift params [10.          0.24003651  2.5305212 ]
+min LLike 53.06047934441807
+reduced chi-square 11.791217632092904
+103
+min best ift params [10.          0.1587085   2.74844431]
+min LLike 39.916758519449736
+reduced chi-square 9.979189629862434
+104
+min best ift params [15.          0.03616597  0.0930811 ]
+min LLike 6.232094461581751
+reduced chi-square 1.3849098803515
+105
+min best ift params [3.         0.         1.21521986]
+min LLike 9.552842859947644
+reduced chi-square 2.122853968877254
+106
+min best ift params [2.         0.04051312 3.36933926]
+min LLike 44.37963607814565
+reduced chi-square 9.862141350699034
+107
+min best ift params [2.         0.21417404 1.74649449]
+min LLike 16.57421853968304
+reduced chi-square 3.013494279942371
+108
+min best ift params [11.          0.          1.62965471]
+min LLike 28.130609106577033
+reduced chi-square 6.25124646812823
+109
+min best ift params [10.          0.22128893  2.45666958]
+min LLike 121.79768308518729
+reduced chi-square 27.066151796708287
+110
+min best ift params [15.         0.         0.0299951]
+min LLike 6.8018153745161465
+reduced chi-square 1.3603630749032294
+111
+min best ift params [2.         0.11964845 1.78922378]
+min LLike 8.075393783767554
+reduced chi-square 1.345898963961259
+112
+min best ift params [1.         0.         1.97383727]
+min LLike 23.25057221046705
+reduced chi-square 5.812643052616762
+113
+min best ift params [1.         0.         2.06296846]
+min LLike 5.1400120147518225
+reduced chi-square 1.1422248921670717
+114
+min best ift params [0.         0.23974385 0.75407245]
+min LLike 36.0246779606662
+reduced chi-square 6.004112993444367
+115
+min best ift params [2.         0.02604741 2.31915734]
+min LLike 17.897421741647825
+reduced chi-square 3.9772048314772945
+116
+min best ift params [1.         0.23391556 2.32105636]
+min LLike 27.488125575567004
+reduced chi-square 4.997841013739455
+117
+min best ift params [2.         0.         1.24276947]
+min LLike 3.7822763980137917
+reduced chi-square 0.9455690995034479
+118
+min best ift params [2.         0.22893104 2.00385141]
+min LLike 21.85205399954569
+reduced chi-square 4.370410799909138
+119
+min best ift params [1.         0.         1.95752199]
+min LLike 6.388700531174148
+reduced chi-square 1.1615819147589361
+120
+min best ift params [2.         0.         1.68611838]
+min LLike 13.430907946588704
+reduced chi-square 3.357726986647176
+121
+min best ift params [2.         0.23828391 1.61334181]
+min LLike 21.471997024520864
+reduced chi-square 3.9039994590037934
+122
+min best ift params [15.          0.14402712  0.05734221]
+min LLike 18.569245873432394
+reduced chi-square 2.6527494104903417
+123
+min best ift params [1.         0.00901858 2.32738325]
+min LLike 6.251335664514368
+reduced chi-square 1.562833916128592
+124
+min best ift params [2.         0.01172541 2.22085571]
+min LLike 16.429249252020966
+reduced chi-square 3.6509442782268815
+125
+min best ift params [15.          0.15937137  0.24523988]
+min LLike 23.833912278942837
+reduced chi-square 4.766782455788567
+126
+min best ift params [1.         0.01087693 2.59046025]
+min LLike 8.461135117507116
+reduced chi-square 2.4174671764306046
+127
+min best ift params [4.         0.         0.81460294]
+min LLike 7.673147841351329
+reduced chi-square 1.9182869603378323
+128
+min best ift params [2.         0.27556255 1.9114194 ]
+min LLike 15.541114860545953
+reduced chi-square 3.8852787151364883
+129
+min best ift params [1.        0.        2.7001513]
+min LLike 7.380839670546992
+reduced chi-square 1.6401865934548872
+130
+min best ift params [2.         0.1506582  1.52380348]
+min LLike 12.249831017744501
+reduced chi-square 3.0624577544361253
+131
+min best ift params [2.         0.02137339 1.52425776]
+min LLike 11.928164533661523
+reduced chi-square 2.6507032297025606
+132
+min best ift params [1.         0.00984395 8.24902533]
+min LLike 47.82966023258827
+reduced chi-square 6.832808604655467
+133
+min best ift params [15.          0.          0.11468336]
+min LLike 15.154321328687614
+reduced chi-square 2.5257202214479357
+134
+min best ift params [2.         0.37116739 2.31847575]
+min LLike 80.97287666036496
+reduced chi-square 17.993972591192215
+135
+min best ift params [10.          0.23319728  2.15221978]
+min LLike 55.62876913316731
+reduced chi-square 13.907192283291828
+136
+min best ift params [2.         0.06292787 1.75423353]
+min LLike 26.975373905953123
+reduced chi-square 4.904613437446023
+137
+min best ift params [2.         0.17848843 1.20169215]
+min LLike 14.570860580908834
+reduced chi-square 2.6492473783470607
+138
+min best ift params [2.         0.13729094 1.65504737]
+min LLike 24.677855321112816
+reduced chi-square 4.112975886852136
+139
+min best ift params [10.          0.          1.80096747]
+min LLike 38.55151632400467
+reduced chi-square 8.567003627556595
+140
+min best ift params [2.         0.21536376 1.84777066]
+min LLike 52.52176030742747
+reduced chi-square 13.130440076856868
+141
+min best ift params [2.         0.05411162 1.44962961]
+min LLike 16.780037925073376
+reduced chi-square 3.3560075850146753
+142
+min best ift params [2.         0.18665301 1.87221737]
+min LLike 47.103136471245854
+reduced chi-square 7.850522745207642
+143
+min best ift params [0.         0.26225945 0.27055651]
+min LLike 22.256615619159977
+reduced chi-square 3.709435936526663
+144
+min best ift params [1.         0.43655607 0.84252774]
+min LLike 1.1447954446953745
+reduced chi-square 0.327084412770107
+145
+min best ift params [2.        0.2391037 1.7542526]
+min LLike 17.836826534679325
+reduced chi-square 3.567365306935865
+146
+min best ift params [2.         0.33934259 2.31918076]
+min LLike 44.78716351693936
+reduced chi-square 8.957432703387871
+147
+min best ift params [2.         0.         1.84746509]
+min LLike 13.450965238792325
+reduced chi-square 2.9891033863982943
+148
+min best ift params [3.         0.2506487  1.58691065]
+min LLike 24.59847415857781
+reduced chi-square 5.4663275907950695
+149
+min best ift params [0.         0.26169768 0.45523239]
+min LLike 17.018692514609818
+reduced chi-square 3.781931669913293
+150
+min best ift params [1.         0.         2.07471723]
+min LLike 15.858041807615535
+reduced chi-square 3.52400929058123
+151
+min best ift params [2.         0.         1.93450104]
+min LLike 27.330919602987056
+reduced chi-square 4.96925810963401
+152
+min best ift params [1.00000000e+00 1.23377961e-03 2.03392266e+00]
+min LLike 8.177504491468673
+reduced chi-square 1.8172232203263716
+153
+min best ift params [1.         0.10365074 2.21198946]
+min LLike 17.604695315698677
+reduced chi-square 4.401173828924669
+154
+min best ift params [2.         0.         1.91884467]
+min LLike 12.288712045608928
+reduced chi-square 1.890571083939835
+155
+min best ift params [4.       0.       0.667854]
+min LLike 19.648619859214687
+reduced chi-square 3.572476338039034
+156
+min best ift params [2.         0.16863889 1.16549239]
+min LLike 27.764579914242116
+reduced chi-square 5.048105438953112
+157
+min best ift params [2.         0.         1.36936506]
+min LLike 5.022166985532684
+reduced chi-square 1.116037107896152
+158
+min best ift params [9.00000000e+00 3.78483212e-04 2.18362966e+00]
+min LLike 62.14260207423564
+reduced chi-square 15.53565051855891
+159
+min best ift params [1.         0.         2.29377028]
+min LLike 17.8891044915536
+reduced chi-square 3.2525644530097453
+160
+min best ift params [2.         0.         1.40081313]
+min LLike 15.304511259161988
+reduced chi-square 3.826127814790497
+161
+min best ift params [4.         0.48302235 1.52453552]
+min LLike 113.04305206762565
+reduced chi-square 20.553282194113756
+162
+min best ift params [10.          0.42141335  2.14168326]
+min LLike 61.4489765132019
+reduced chi-square 11.172541184218527
+163
+min best ift params [0.         0.2426051  9.84358815]
+min LLike 36.48960641024848
+reduced chi-square 8.108801424499662
+164
+min best ift params [2.         0.12275698 1.52420807]
+min LLike 13.215964494524012
+reduced chi-square 2.936880998783114
+165
+min best ift params [2.         0.         2.02406152]
+min LLike 24.90250072342525
+reduced chi-square 4.98050014468505
+166
+min best ift params [0.         0.         9.09104466]
+min LLike 61.45152662778916
+reduced chi-square 13.655894806175368
+167
+min best ift params [4.         0.07642531 0.79066115]
+min LLike 18.625737522839334
+reduced chi-square 3.725147504567867
+168
+min best ift params [10.          0.          1.52363499]
+min LLike 21.31436912571466
+reduced chi-square 4.736526472381035
+169
+min best ift params [15.          0.          0.14570042]
+min LLike 14.060326974616867
+reduced chi-square 3.124517105470415
+170
+min best ift params [0.         0.04199362 1.57570477]
+min LLike 51.56611979994162
+reduced chi-square 11.45913773332036
+171
+min best ift params [1.         0.19573782 2.59061258]
+min LLike 38.17857023279254
+reduced chi-square 9.544642558198134
+172
+min best ift params [0.         0.04736093 0.33143339]
+min LLike 4.990882646248441
+reduced chi-square 1.2477206615621101
+173
+min best ift params [2.         0.56834976 1.89533378]
+min LLike 60.169214611533576
+reduced chi-square 13.370936580340794
+174
+min best ift params [1.         0.         2.31860031]
+min LLike 6.84943715686634
+reduced chi-square 1.712359289216585
+175
+min best ift params [1.         0.         1.70689547]
+min LLike 5.415664422158483
+reduced chi-square 1.3539161055396207
+176
+min best ift params [3.         0.         0.99678932]
+min LLike 9.28429886534393
+reduced chi-square 2.652656818669694
+177
+min best ift params [15.          0.02402989  0.16385199]
+min LLike 9.682563886653242
+reduced chi-square 1.6137606477755402
+178
+min best ift params [0.         0.37317251 0.69662601]
+min LLike 63.6936361510814
+reduced chi-square 11.580661118378437
+179
+min best ift params [1.         0.22347212 2.32402247]
+min LLike 46.74389058192418
+reduced chi-square 8.498889196713487
+180
+min best ift params [2.         0.         1.49922169]
+min LLike 9.58516623601046
+reduced chi-square 1.7427574974564473
+181
+min best ift params [1.         0.02469459 2.31979187]
+min LLike 8.118929188630641
+reduced chi-square 2.0297322971576603
+182
+min best ift params [3.         0.79166098 1.58549269]
+min LLike 94.40259291886488
+reduced chi-square 20.978353981969974
+183
+min best ift params [2.         0.35468617 1.52420168]
+min LLike 35.53673094489434
+reduced chi-square 7.8970513210876305
+184
+min best ift params [2.         0.         2.80346951]
+min LLike 23.064988992264915
+reduced chi-square 4.612997798452983
+185
+min best ift params [3.         0.         1.24498008]
+min LLike 4.8741580246907334
+reduced chi-square 1.2185395061726834
+186
+min best ift params [2.        0.        1.1012545]
+min LLike 8.061465759186152
+reduced chi-square 1.7914368353747006
+187
+min best ift params [3.         0.21280984 1.63662909]
+min LLike 50.283386709710555
+reduced chi-square 12.570846677427639
+188
+min best ift params [1.         0.         2.26505825]
+min LLike 19.188311718564254
+reduced chi-square 4.7970779296410635
+189
+min best ift params [10.          0.12365064  1.83642139]
+min LLike 15.663834338781351
+reduced chi-square 3.4808520752847447
+190
+min best ift params [0.        0.2822398 0.1965158]
+min LLike 12.309320596645415
+reduced chi-square 2.461864119329083
+191
+min best ift params [2.         0.17314697 2.30384835]
+min LLike 21.461013375578332
+reduced chi-square 5.365253343894583
+192
+min best ift params [3.         0.02143097 1.60172131]
+min LLike 39.570922735956465
+reduced chi-square 11.30597792455899
+193
+min best ift params [2.         0.03705342 1.72241794]
+min LLike 7.967844498188649
+reduced chi-square 1.9919611245471622
+194
+min best ift params [2.         0.25660591 1.80746001]
+min LLike 38.3252295824272
+reduced chi-square 8.516717684983822
+195
+min best ift params [2.         0.20949224 1.80051643]
+min LLike 8.780675346691314
+reduced chi-square 2.508764384768947
+196
+min best ift params [0.         0.10534698 0.33131159]
+min LLike 4.825110821757257
+reduced chi-square 1.0722468492793906
+197
+min best ift params [2.         0.00996142 1.52394674]
+min LLike 7.9496166196921685
+reduced chi-square 1.5899233239384336
+198
+min best ift params [10.          0.          1.72705652]
+min LLike 43.16065867760043
+reduced chi-square 9.591257483911207
+199
+min best ift params [0.         0.15972491 0.4761544 ]
+min LLike 9.698665107309592
+reduced chi-square 2.7710471735170263
+200
+min best ift params [2.         0.0157134  1.96408064]
+min LLike 20.637935093418406
+reduced chi-square 5.89655288383383
+201
+min best ift params [10.          0.          1.73650875]
+min LLike 33.22253219425227
+reduced chi-square 8.305633048563067
+202
+min best ift params [1.         0.         1.51548058]
+min LLike 7.211468147225769
+reduced chi-square 1.4422936294451538
+203
+min best ift params [2.         1.03681692 1.52463038]
+min LLike 65.02060566764969
+reduced chi-square 18.57731590504277
+204
+min best ift params [2.         0.17021308 2.01948245]
+min LLike 27.378459661633354
+reduced chi-square 7.822417046180958
+205
+min best ift params [1.         0.24791996 5.29540701]
+min LLike 76.645777582389
+reduced chi-square 17.032395018308666
+206
+min best ift params [2.         0.30305734 0.99562616]
+min LLike 3.4425676935308895
+reduced chi-square 1.3770270774123559
+207
+min best ift params [10.         0.         0.7300914]
+min LLike 4.247316887058524
+reduced chi-square 1.6989267548234097
+208
+min best ift params [1.         0.10804933 2.35843132]
+min LLike 1.8966627050757443
+reduced chi-square 0.6322209016919148
+209
+min best ift params [1.         0.         2.21069431]
+min LLike 2.5392287675578347
+reduced chi-square 0.6348071918894587
+210
+min best ift params [15.          0.17711726  0.07595216]
+min LLike 6.477631536848827
+reduced chi-square 1.439473674855295
+'''

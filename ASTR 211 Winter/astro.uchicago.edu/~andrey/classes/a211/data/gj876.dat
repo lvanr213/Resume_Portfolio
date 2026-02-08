@@ -1,0 +1,8 @@
+# two planets around red dwarf GJ 876 in 2:1 resonance.
+# coordinates (in AU) and velocities (in AU/day) for solar system planets for 
+# Table 3 of Laughlin et al. 2005, ApJ 622, 1182
+#
+# name      mass (g) x y z (cm)  vx vy vz (cm/s)
+Star	   6.36515181e32  0.             0.           0. -3.97415664e3 -9.01247643e3 0.
+Planetc    1.13341374e30 -1.3739370e12   6.6185776e11 0. -2.53217478e6 -5.26220995e6 0.
+Planetb    3.59700414e30  2.89833447e12 -1.3485766e12 0.  1.50114165e6  3.25294014e6 0.
